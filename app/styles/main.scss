@@ -1,0 +1,44 @@
+@import "../bower_components/foundation/scss/normalize",
+"../bower_components/foundation/scss/foundation",
+"compass",
+"icon/*.png";
+
+
+header {
+	a {
+		@include replace-text('logo.png');
+		display:block;
+		height: image-height('logo.png');
+	}
+
+	span {
+		font-family: 'Herr Von Muellerhoff', cursive;
+	}
+}
+nav {
+	@include all-icon-sprites;
+
+	.icon-facebook {
+		height: icon-sprite-height(facebook);
+		width: icon-sprite-width(facebook);
+	}
+	.icon-twitter {
+		height: icon-sprite-height(twitter);
+		width: icon-sprite-width(twitter);
+	}
+	.icon-instagram {
+		height: icon-sprite-height(instagram);
+		width: icon-sprite-width(instagram); 
+	}
+
+	.icon-instagram, .icon-twitter, .icon-facebook {
+		a {
+			display:block;
+			text-indent: -9999998px;
+		}
+	}
+}
+main {}
+footer 	{
+	background: image-url('footer-bg.png') no-repeat top;
+}
