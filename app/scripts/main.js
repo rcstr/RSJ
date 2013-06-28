@@ -1,5 +1,5 @@
 /*global RSJ, $*/
-'use strict';
+//'use strict';
 
 
 window.RSJ = {
