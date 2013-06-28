@@ -30,7 +30,7 @@
                 <li><a href="#">Insta-Shop</a></li>
                 <li><a href="#">Workshop</a></li>
                 <li><a href="#">Media</a></li>
-                <li><a href="#">Stockist</a></li>
+                <li><a href="#/stockist">Stockist</a></li>
                 <li><a href="#">Journal</a></li>
                 <li><a href="#">Information</a></li>
             </ul>
@@ -67,8 +67,8 @@
 
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/underscore/underscore-min.js"></script>
-        <script src="bower_components/backbone/backbone-min.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
@@ -76,8 +76,12 @@
         <script src="scripts/templates.js"></script>
         <script src="scripts/models/Page-model.js"></script>
         <script src="scripts/collections/Pages-collection.js"></script>
-        <script src="scripts/routes/App-router.js"></script>
         <script src="scripts/views/App-view.js"></script>
+        <script src="scripts/models/Post-model.js"></script>
+        <script src="scripts/collections/Posts-collection.js"></script>
+        <script src="scripts/views/Stockists-view.js"></script>
+        <script src="scripts/views/Stockist-view.js"></script>
+        <script src="scripts/routes/App-router.js"></script>
         <!-- endbuild -->
 </body>
 </html>

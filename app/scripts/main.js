@@ -7,9 +7,12 @@ window.RSJ = {
     Collections: {},
     Views: {},
     Routers: {},
+    Config: {
+    	apiUrl: 'http://risingsunjeans.com/api'
+    },
     init: function () {
         return new RSJ.Views.AppView();
-    }
+    },
 };
 
 $(document).ready(function () {

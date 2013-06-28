@@ -3,6 +3,6 @@
 RSJ.Collections.PagesCollection = Backbone.Collection.extend({
 
     model: RSJ.Models.PageModel,
-    url: 'http://risingsunjeans.com/api/get_page/'
+    url: RSJ.Config.apiUrl+'/get_page/'
 
 });
