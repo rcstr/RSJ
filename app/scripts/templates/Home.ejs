@@ -1,0 +1,19 @@
+<%
+console.log(obj);
+%>
+<section id="home" class="large-12 column">
+	<div class="row">
+		<% for(var i = 0; i<1; i++){ %>
+			<figure class="large-12 columns">
+				<a href="<%= large[i].url %>" title="<%= large[i].title %>"><img width="886" src="<%= large[i].img %>" alt="<%= large[i].title %>"></a>
+			</figure>
+		<% } %>
+	</div>
+	<div class="row">
+		<% for(var s = 0; s<2;s++){ %>
+			<figure class="large-6 columns">
+				<a href="<%= small[i].url %>" title="<%= small[i].title %>"><img src="<%= small[i].img %>" alt="<%= small[i].title %>"></a>
+			</figure>
+		<% } %>
+	</div>
+</section>

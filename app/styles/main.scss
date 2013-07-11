@@ -3,6 +3,11 @@
 "compass",
 "icon/*.png";
 
+@include all-icon-sprites;
+
+html {
+	background:image-url('body_bg.jpg');
+}
 
 header {
 	a {
@@ -12,12 +17,10 @@ header {
 	}
 
 	span {
-		font-family: 'Herr Von Muellerhoff', cursive;
+		font-family: 'Clicker Script', cursive;
 	}
 }
 nav {
-	@include all-icon-sprites;
-
 	.icon-facebook {
 		height: icon-sprite-height(facebook);
 		width: icon-sprite-width(facebook);
@@ -39,6 +42,23 @@ nav {
 	}
 }
 main {}
+#home {
+	img {
+		border:4px solid #f5ebe2;
+		@include single-box-shadow(#999, 0px, 0px, 10px);
+	}
+}
 footer 	{
 	background: image-url('footer-bg.png') no-repeat top;
+	padding-top:15px;
+
+	.icon-sewing_machine {
+		height: icon-sprite-height(sewing_machine);
+		width: icon-sprite-width(sewing_machine);
+		display:inline-block;
+	}
+
+	a {
+		color: $anchor-font-color-hover;
+	}
 }
