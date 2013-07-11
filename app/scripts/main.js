@@ -1,6 +1,4 @@
 /*global RSJ, $*/
-//'use strict';
-
 
 window.RSJ = {
     Models: {},
@@ -11,10 +9,13 @@ window.RSJ = {
     	apiUrl: 'http://risingsunjeans.com/api'
     },
     init: function () {
+        'use strict';
+
         return new RSJ.Views.AppView();
     },
 };
 
 $(document).ready(function () {
+    'use strict';
     RSJ.init();
 });

@@ -1,12 +1,18 @@
-/*global RSJ, Backbone, JST*/
+/*global RSJ, Backbone*/
+(function() {
+	'use strict';
 
-RSJ.Views.AppView = Backbone.View.extend({
+	RSJ.Views.AppView = Backbone.View.extend({
 
-    el: 'body',
+		el: 'body',
 
-    initialize: function() {
-    	new RSJ.Routers.AppRouter();
-        Backbone.history.start();
-    }
+		initialize: function() {
+			new RSJ.Routers.AppRouter();
+			Backbone.history.start({
+				pushState: false,
+				root:'/'			
+			});
+		}
 
-});
+	});
+})();

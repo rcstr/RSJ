@@ -1,12 +1,15 @@
 /*global RSJ, Backbone*/
+(function() {
+	'use strict';
 
-RSJ.Collections.PostsCollection = Backbone.Collection.extend({
+	RSJ.Collections.PostsCollection = Backbone.Collection.extend({
 
-    model: RSJ.Models.PostModel,
-    url: RSJ.Config.apiUrl+'/get_posts/',
+		model: RSJ.Models.PostModel,
+		url: RSJ.Config.apiUrl+'/get_posts/',
 
-    parse: function(response) {
-    	return response.posts;
-    }
+		parse: function(response) {
+			return response.posts;
+		}
 
-});
+	});
+})();

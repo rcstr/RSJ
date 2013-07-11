@@ -1,31 +1,57 @@
 /*global RSJ, Backbone*/
+(function() {
+  'use strict';
 
-RSJ.Routers.AppRouter = Backbone.Router.extend({
-	routes: {
-		'': 'home',
-        'stockist':'pageStockist',
-        ':slug': 'page'
-	},
-
-    initialize: function() {
-      this.pagesCollection = new RSJ.Collections.PagesCollection();
-      this.postsCollection = new RSJ.Collections.PostsCollection();
+  RSJ.Routers.AppRouter = Backbone.Router.extend({
+    routes: {
+      '': 'pageHome',
+      'stockist':'pageStockist',
+      ':slug': 'page'
     },
 
-    Pagehome: function() {},
+    initialize: function() {},
 
-	pageStockist: function() {
-        this.postsCollection.fetch({
-            data:{'post_type':'stock'},
-            success: function(c, r) {
-                new RSJ.Views.StockistsView({
-                    collection: c
-                });
-            }
-        })
+    pageHome: function() {
+      if(!this.postsCollection) {
+        this.postsCollection = new RSJ.Collections.PostsCollection();
+      }
+
+      this.postsCollection.fetch({
+        data:{'post_type':'slide'},
+        success: function(c) {
+          new RSJ.Views.HomeView({
+            collection: c
+          });
+        },
+        error: function(c, r) {
+          console.log(r);
+        }
+      });
+    },
+
+    pageStockist: function() {
+      if(!this.postsCollection) {
+        this.postsCollection = new RSJ.Collections.PostsCollection();
+      }
+
+      this.postsCollection.fetch({
+        data:{'post_type':'stock'},
+        success: function(c) {
+          new RSJ.Views.StockistsView({
+            collection: c
+          });
+        },
+        error: function(c, r) {
+          console.log(r);
+        }
+      });
     },
 
     page: function(slug) {
-        var page  = this.pagesCollection.fetch({data: {'slug': slug}});
+      if(!this.pagesCollection) {
+        this.pagesCollection = new RSJ.Collections.PagesCollection();
+      }
+      var page  = this.pagesCollection.fetch({data: {'slug': slug}});
     }
-});
+  });
+})();
