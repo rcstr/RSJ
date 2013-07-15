@@ -1,14 +1,20 @@
-<section id="home" class="large-12 column">
+<section id="home" class="large-12 column main-content l-one-column">
 	<div class="row">
 		<% for(var i = 0; i<1; i++){ %>
-			<figure class="large-12 columns">
+			<figure class="large-12 columns text-center">
 				<a href="<%= large[i].url %>" title="<%= large[i].title %>"><img width="886" src="<%= large[i].img %>" alt="<%= large[i].title %>"></a>
 			</figure>
 		<% } %>
 	</div>
 	<div class="row">
 		<% for(var s = 0; s<2;s++){ %>
-			<figure class="large-6 columns">
+
+		<% var textDirection = 'left'; 
+			if(s === 1) {
+				textDirection = 'right';
+			}
+		%>
+			<figure class="large-6 columns text-<%= textDirection %>">
 				<a href="<%= small[i].url %>" title="<%= small[i].title %>"><img src="<%= small[i].img %>" alt="<%= small[i].title %>"></a>
 			</figure>
 		<% } %>

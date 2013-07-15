@@ -1,7 +1,7 @@
 <% var regions = obj; %>
 <% for(var i=0; i<regions.length; i++) {%>
-<details class="large-12 columns" data-rsj-stockist-region="<%= regions[i] %>">
+<details class="large-12 columns" data-rsj-stockist-region="<%= regions[i] %>" open="true">
 	<summary><%= regions[i] %></summary>
-	<ul class="row"></ul>
+	<ul class="row no-bullet"></ul>
 </details>
 <% } %>

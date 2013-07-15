@@ -6,7 +6,7 @@
     routes: {
       '': 'pageHome',
       'stockist':'pageStockist',
-      ':slug': 'page'
+      '*slug': 'page'
     },
 
     initialize: function() {},
@@ -49,9 +49,21 @@
 
     page: function(slug) {
       if(!this.pagesCollection) {
-        this.pagesCollection = new RSJ.Collections.PagesCollection();
+        this.pagesModel = new RSJ.Models.PageModel();
       }
-      var page  = this.pagesCollection.fetch({data: {'slug': slug}});
+
+      this.pagesModel.fetch({
+        data: {'slug':slug},
+        success: function(m) {
+          new RSJ.Views.PageView({
+            model: m
+          });
+        },
+        error: function(m, r) {
+          console.log(r);
+        }
+      });
     }
+
   });
 })();

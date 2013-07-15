@@ -7,11 +7,14 @@
 		el: 'body',
 
 		initialize: function() {
-			new RSJ.Routers.AppRouter();
+			RSJ.Routers.Navigator = new RSJ.Routers.AppRouter();
+			
 			Backbone.history.start({
-				pushState: false,
+				pushState: true,
 				root:'/'			
 			});
+
+			RSJ.setUrls();
 		}
 
 	});

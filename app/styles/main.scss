@@ -20,7 +20,15 @@ header {
 		font-family: 'Clicker Script', cursive;
 	}
 }
-nav {
+nav[role="main-nav"] {
+	background: image-url('border.png') top left repeat-x, image-url('border.png') bottom left repeat-x;
+	padding: 5px 0;
+	margin-bottom: 20px;
+	
+	.inline-list {
+		margin-bottom: 0px;
+	}
+
 	.icon-facebook {
 		height: icon-sprite-height(facebook);
 		width: icon-sprite-width(facebook);
@@ -34,20 +42,45 @@ nav {
 		width: icon-sprite-width(instagram); 
 	}
 
-	.icon-instagram, .icon-twitter, .icon-facebook {
-		a {
-			display:block;
-			text-indent: -9999998px;
+	.social {
+		&:hover .social-icon {
+			@include opacity(0.5);
+		}
+
+		.social-icon:hover {
+			@include opacity(1);
 		}
 	}
+
+	.icon-instagram, .icon-twitter, .icon-facebook {
+		display:inline-block;
+		@include hide-text();
+	}
 }
-main {}
+main {
+	.main-content {
+		margin-bottom:10px;
+	}
+
+	summary::-webkit-details-marker {
+		display:none;
+	}
+
+	details {
+		margin-bottom: 20px;
+	}
+}
+
 #home {
+	.row:first-child {
+		margin-bottom: 10px;
+	} 
 	img {
 		border:4px solid #f5ebe2;
 		@include single-box-shadow(#999, 0px, 0px, 10px);
 	}
 }
+
 footer 	{
 	background: image-url('footer-bg.png') no-repeat top;
 	padding-top:15px;

@@ -1,6 +1,7 @@
 /* global RSJ, Backbone, JST, _*/
 (function() {
     'use strict';
+
     RSJ.Views.StockistsView = Backbone.View.extend({
 
         el: 'main',
@@ -10,6 +11,7 @@
             _.bindAll(this);
             //  first thing i need to do is get the categories and print them
             this._extractRegions();
+            RSJ.setTitle('STOCKIST');
         },
 
         _extractRegions: function() {
