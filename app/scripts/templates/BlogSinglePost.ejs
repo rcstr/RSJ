@@ -1,0 +1,9 @@
+<article id="post-<%= obj.get('id') %>">
+	<header>
+		<% var url = obj.get('categories')[0].slug +'/'+ obj.get('slug'); %>
+		<h3><a href="<%= url %>"><%= obj.get('title') %></a></h3>
+	</header>
+	<div class="post-content">
+		<%= obj.get('content') %>
+	</div>
+</article>
