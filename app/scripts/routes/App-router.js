@@ -9,60 +9,22 @@
       '*slug': 'page'
     },
 
-    initialize: function() {},
+    initialize: function() {
+      new RSJ.Views.HomeView();
+      new RSJ.Views.StockistsView();
+      new RSJ.Views.PageView();
+    },
 
     pageHome: function() {
-      if(!this.postsCollection) {
-        this.postsCollection = new RSJ.Collections.PostsCollection();
-      }
-
-      this.postsCollection.fetch({
-        data:{'post_type':'slide'},
-        success: function(c) {
-          new RSJ.Views.HomeView({
-            collection: c
-          });
-        },
-        error: function(c, r) {
-          console.log(r);
-        }
-      });
+      RSJ.Vent.trigger('rsj:homepage');
     },
 
     pageStockist: function() {
-      if(!this.postsCollection) {
-        this.postsCollection = new RSJ.Collections.PostsCollection();
-      }
-
-      this.postsCollection.fetch({
-        data:{'post_type':'stock'},
-        success: function(c) {
-          new RSJ.Views.StockistsView({
-            collection: c
-          });
-        },
-        error: function(c, r) {
-          console.log(r);
-        }
-      });
+      RSJ.Vent.trigger('rsj:stockists');
     },
 
     page: function(slug) {
-      if(!this.pagesCollection) {
-        this.pagesModel = new RSJ.Models.PageModel();
-      }
-
-      this.pagesModel.fetch({
-        data: {'slug':slug},
-        success: function(m) {
-          new RSJ.Views.PageView({
-            model: m
-          });
-        },
-        error: function(m, r) {
-          console.log(r);
-        }
-      });
+      RSJ.Vent.trigger('rsj:page', {slug:slug});
     }
 
   });

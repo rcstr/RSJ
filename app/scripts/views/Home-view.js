@@ -1,6 +1,7 @@
 /*global RSJ, Backbone, JST*/
 (function() {
     'use strict';
+
     RSJ.Views.HomeView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/Home.ejs'],
@@ -9,13 +10,29 @@
         initialize: function() {
             _.bindAll(this);
 
-            this.render();
+            this.collection = new RSJ.Collections.PostsCollection();
+
+            RSJ.Vent.on('rsj:homepage', this.getSlides);
         },
 
         render: function() {
             this.$el.html(this.template(this.serialize()));
 
             return this;
+        },
+
+        getSlides: function() {
+            var _self = this;
+
+            this.collection.fetch({
+                data: {"post_type":"slide"},
+                success: function(c) {
+                    _self.render();
+                },
+                error: function(c, r) {
+                    console.log(r);
+                }
+            });
         },
 
         serialize: function() {
@@ -40,4 +57,4 @@
         },
 
     });
-})();
+    })();

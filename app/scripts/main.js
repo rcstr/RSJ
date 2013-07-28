@@ -6,6 +6,7 @@
         Collections: {},
         Views: {},
         Routers: {},
+        Vent: {},
         Config: {
             apiUrl: 'http://risingsunjeans.com/api',
         },

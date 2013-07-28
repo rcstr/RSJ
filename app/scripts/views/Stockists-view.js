@@ -9,23 +9,12 @@
 
         initialize: function() {
             _.bindAll(this);
-            //  first thing i need to do is get the categories and print them
-            this._extractRegions();
+
+            this.collection = new RSJ.Collections.PostsCollection();
+
+            RSJ.Vent.on('rsj:stockists', this.getStockists);
+            
             RSJ.setTitle('STOCKIST');
-        },
-
-        _extractRegions: function() {
-            var regions = [];
-
-            _.filter(this.collection.models, function(stock) {
-                var stockRegion = stock.get('taxonomy_region')[0].title;
-
-                if(regions.indexOf(stockRegion) < 0) {
-                    regions.push(stockRegion);
-                }
-            });
-
-            this.render(regions);
         },
 
         render: function(regions) {
@@ -39,7 +28,35 @@
             });
 
             return this;
-        }
+        },
+
+        getStockists: function() {
+            var _self = this;
+
+            this.collection.fetch({
+              data:{'post_type':'stock'},
+              success: function(c) {
+                _self.extractRegions();
+              },
+              error: function(c, r) {
+                console.log(r);
+              }
+            });
+        },
+
+        extractRegions: function() {
+            var regions = [];
+
+            _.filter(this.collection.models, function(stock) {
+                var stockRegion = stock.get('taxonomy_region')[0].title;
+
+                if(regions.indexOf(stockRegion) < 0) {
+                    regions.push(stockRegion);
+                }
+            });
+
+            this.render(regions);
+        },
 
     });
 })();

@@ -7,10 +7,13 @@
 		el: 'body',
 
 		initialize: function() {
+			RSJ.Vent = _.extend({}, Backbone.Events);
+
 			RSJ.Routers.Navigator = new RSJ.Routers.AppRouter();
-			
+			new RSJ.Routers.BlogRouter();
+
 			Backbone.history.start({
-				pushState: true,
+				pushState: false,
 				root:'/'			
 			});
 
