@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Rising Sun Jeans</title>
+        <meta name="fragment" content="#">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -17,7 +18,7 @@
         <!-- endbuild -->
     </head>
     <body>
-        <header class="row">
+        <header class="row" role="main-header">
         <div class="large-8 large-centered columns">
             <hgroup>
                 <h1><a href="/#">Rising Sun Jeans</a></h1>
@@ -37,9 +38,9 @@
             </ul>
         </div>
         <div class="large-1 columns text-right social">
-                <a href="#" class="icon-facebook social-icon">Facebook</a>
-                <a href="#" class="icon-twitter social-icon">Twitter</a>
-                <a href="#" class="icon-instagram social-icon">Instagram</a>
+                <a href="https://www.facebook.com/pages/Rising-Sun-Co/129095697115644" target="_blank" class="icon-facebook social-icon">Facebook</a>
+                <a href="http://twitter.com/risingsunjeans" target="_blank" class="icon-twitter social-icon">Twitter</a>
+                <a href="http://instagram.com/risingsunjeans" target="_blank" class="icon-instagram social-icon">Instagram</a>
         </div>
     </nav>
     <main class="row" role="main"></main>
@@ -74,14 +75,20 @@
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
         <script src="scripts/models/Page-model.js"></script>
+        <script src="scripts/models/Category-model.js"></script>
+        <script src="scripts/views/BlogPosts-view.js"></script>
         <script src="scripts/views/App-view.js"></script>
+        <script src="scripts/views/Blog-view.js"></script>
         <script src="scripts/models/Post-model.js"></script>
         <script src="scripts/collections/Posts-collection.js"></script>
+        <script src="scripts/collections/Categories-collection.js"></script>
         <script src="scripts/views/Stockists-view.js"></script>
         <script src="scripts/views/Stockist-view.js"></script>
         <script src="scripts/views/Home-view.js"></script>
         <script src="scripts/views/Page-view.js"></script>
+        <script src="scripts/views/BlogSinglePost-view.js"></script>
         <script src="scripts/routes/App-router.js"></script>
+        <script src="scripts/routes/Blog-router.js"></script>
         <!-- endbuild -->
 </body>
 </html>

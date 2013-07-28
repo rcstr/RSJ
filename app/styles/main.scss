@@ -9,7 +9,7 @@ html {
 	background:image-url('body_bg.jpg');
 }
 
-header {
+header[role="main-header"] {
 	a {
 		@include replace-text('logo.png');
 		display:block;
@@ -71,6 +71,14 @@ main {
 	}
 }
 
+.page-content {
+	h3 {
+		background: image-url('border.png') top left repeat-x, image-url('border.png') bottom left repeat-x;
+		padding:$header-top-margin 0 $header-bottom-margin 0;
+		margin: 0px;
+	}
+}
+
 #home {
 	.row:first-child {
 		margin-bottom: 10px;
@@ -79,7 +87,7 @@ main {
 		border:4px solid #f5ebe2;
 		@include single-box-shadow(#999, 0px, 0px, 10px);
 	}
-}
+}	
 
 footer 	{
 	background: image-url('footer-bg.png') no-repeat top;
