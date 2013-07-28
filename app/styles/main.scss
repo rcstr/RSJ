@@ -20,6 +20,7 @@ header[role="main-header"] {
 		font-family: 'Clicker Script', cursive;
 	}
 }
+
 nav[role="main-nav"] {
 	background: image-url('border.png') top left repeat-x, image-url('border.png') bottom left repeat-x;
 	padding: 5px 0;
@@ -57,6 +58,7 @@ nav[role="main-nav"] {
 		@include hide-text();
 	}
 }
+
 main {
 	.main-content {
 		margin-bottom:10px;
@@ -69,13 +71,13 @@ main {
 	details {
 		margin-bottom: 20px;
 	}
-}
 
-.page-content {
-	h3 {
-		background: image-url('border.png') top left repeat-x, image-url('border.png') bottom left repeat-x;
-		padding:$header-top-margin 0 $header-bottom-margin 0;
-		margin: 0px;
+	.page-content {
+		h3 {
+			background: image-url('border.png') top left repeat-x, image-url('border.png') bottom left repeat-x;
+			padding:$header-top-margin 0 $header-bottom-margin 0;
+			margin: 0px;
+		}
 	}
 }
 
@@ -88,6 +90,14 @@ main {
 		@include single-box-shadow(#999, 0px, 0px, 10px);
 	}
 }	
+
+#blog-container {
+	background: image-url('border.png') repeat-x top left, image-url('border.png') repeat-x top left;
+	
+	$border: 1px solid #000;
+	border-left: $border;
+	border-right: $border;
+}
 
 footer 	{
 	background: image-url('footer-bg.png') no-repeat top;

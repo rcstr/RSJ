@@ -5,7 +5,6 @@
 
 	RSJ.Views.BlogPostsView = Backbone.View.extend({
 
-	    template: JST['app/scripts/templates/BlogPosts.ejs'],
 	    el: 'main',
 
 	    initialize: function() {
